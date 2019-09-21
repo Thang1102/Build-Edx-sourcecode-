@@ -1,0 +1,112 @@
+wget https://bitnami.com/redirect/to/193216/bitnami-edx-ginkgo.2-4-linux-x64-installer.run### Cài vào /opt/ d? làm
+############### Ð?i kho?ng 1h cho cài xong
+sudo bitnami-edx-ginkgo.2-4-linux-x64-installer.run
+----------------------------------------------------------------------------
+Welcome to the Open edX powered by Bitnami Setup Wizard.
+
+----------------------------------------------------------------------------
+Select the components you want to install; clear the components you do not want 
+to install. Click Next when you are ready to continue.
+
+Open edX : Y (Cannot be edited)
+
+Demo course for Open edX [Y/n] :y
+Is the selection above correct? [Y/n]: y
+
+----------------------------------------------------------------------------
+Installation folder
+
+Please, choose a folder to install Open edX powered by Bitnami
+Select a folder [/opt/edx-ginkgo.2-4]: 
+
+----------------------------------------------------------------------------
+Create Admin account
+
+Open edX powered by Bitnami admin user creation
+
+Your real name [User Name]: Daniel K. Schneider
+
+Email Address [user@example.com]: 
+
+Login [user]: admin
+
+Password :
+Please confirm your password :
+----------------------------------------------------------------------------
+Web Server Port
+
+Choose a port that is not currently in use, such as port 81.
+Apache Web Server Port [81]: 
+
+----------------------------------------------------------------------------
+MySQL Information
+
+Please enter your MySQL database information:
+
+Choose a port that is not currently in use, such as port 3307.
+MySQL Server port [3307]: 
+
+----------------------------------------------------------------------------
+The hostname that will be used to create internal URLs. If this value is 
+incorrect, you may be unable to access your Open edX installation from other 
+computers.
+
+Hostname [127.0.1.1]: xxxxxxx.unige.ch
+
+Do you want to configure mail support? [y/N]: y
+
+----------------------------------------------------------------------------
+Configure SMTP Settings
+
+This is required so your application can send notifications via email.
+Default email provider:
+
+[1] GMail
+[2] Custom
+Please choose an option [1] : 2
+
+----------------------------------------------------------------------------
+Configure SMTP Settings
+
+This data is stored in the application configuration files and may be visible to 
+others. For this reason, it is recommended that you do not use your personal 
+account credentials.
+
+Username []: 
+
+Password :
+Re-enter :
+SMTP Host [xxxxxxxx.unige.ch]: 
+
+SMTP Port [587]: 
+
+Secure connection
+
+[1] None
+[2] SSL
+[3] TLS
+Please choose an option [1] : 
+
+----------------------------------------------------------------------------
+Setup is now ready to begin installing Open edX powered by Bitnami on your 
+computer.
+outlook
+Do you want to continue? [Y/n]: 
+
+----------------------------------------------------------------------------
+Please wait while Setup installs Open edX powered by Bitnami on your computer.
+
+ Installing
+ 0% ______________ 50% ______________ 100%
+ ########################################
+
+###################### S?a file d? qu?n tr?
+
+cd /opt/edx-ginkgo.2-4/apps/edx/conf
+vim httpd-cms.conf  
+vim httpd-lms.conf
+###S?a n?i dung thành:
+<Location "/admin">
+  Require all granted
+  ErrorDocument 403 "For security reasons, this URL is only accessible using localhost (127.0.0.1) as the hostname."
+</Location>
