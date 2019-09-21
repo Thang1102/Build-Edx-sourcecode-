@@ -1,5 +1,5 @@
-wget https://bitnami.com/redirect/to/193216/bitnami-edx-ginkgo.2-4-linux-x64-installer.run### C�i v�o /opt/ d? l�m
-############### �?i kho?ng 1h cho c�i xong
+wget https://bitnami.com/redirect/to/193216/bitnami-edx-ginkgo.2-4-linux-x64-installer.run### Cài vào /opt/ dễ làm
+############### Ðợi khoảng 1h cho cài xong
 sudo bitnami-edx-ginkgo.2-4-linux-x64-installer.run
 ----------------------------------------------------------------------------
 Welcome to the Open edX powered by Bitnami Setup Wizard.
@@ -100,12 +100,12 @@ Please wait while Setup installs Open edX powered by Bitnami on your computer.
  0% ______________ 50% ______________ 100%
  ########################################
 
-###################### S?a file d? qu?n tr?
+###################### Sửa file để quản trị
 
 cd /opt/edx-ginkgo.2-4/apps/edx/conf
 vim httpd-cms.conf  
 vim httpd-lms.conf
-###S?a n?i dung th�nh:
+###Sửa nội dung thành:
 <Location "/admin">
   Require all granted
   ErrorDocument 403 "For security reasons, this URL is only accessible using localhost (127.0.0.1) as the hostname."
