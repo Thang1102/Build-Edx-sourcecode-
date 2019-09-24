@@ -1,6 +1,7 @@
 wget https://bitnami.com/redirect/to/193216/bitnami-edx-ginkgo.2-4-linux-x64-installer.run### Cài vào /opt/ dễ làm
+chmod +x bitnami-edx-ginkgo.2-4-linux-x64-installer.run
 ############### Ðợi khoảng 1h cho cài xong
-sudo bitnami-edx-ginkgo.2-4-linux-x64-installer.run
+./bitnami-edx-ginkgo.2-4-linux-x64-installer.run
 ----------------------------------------------------------------------------
 Welcome to the Open edX powered by Bitnami Setup Wizard.
 
